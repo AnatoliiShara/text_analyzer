@@ -21,13 +21,13 @@ def custom_count_vectorizer(documents):
         counts.append(vector)
     return vocabulary, counts
 
-# examples
-documents = ["This is the first document.", "This document is the second document.", "And this is the third one."]
+# read text from file
+file_path = '/home/anatolii-shara/Documents/LeetCode_Solutions/astronomy.txt'
+with open(file_path, "r", encoding="utf-8") as file:
+    text = file.read()
+
+documents = [text]
 vocabulary, counts = custom_count_vectorizer(documents)
-
-print(f"Vocabulary: {vocabulary}")
-print(f"Counts: {counts}")
-
 #create table-like representations
 table_data = []
 for word, count in zip(vocabulary, counts):
